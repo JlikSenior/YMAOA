@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>任务管理</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -12,11 +12,11 @@
     </nav>
     <div class="container mt-5 text-center">
         <h1 class="mb-4">任务管理</h1>
-        <a href="/create-task" class="btn btn-primary btn-block mb-3">创建任务</a>
-        <a href="/task-list" class="btn btn-secondary btn-block">任务列表</a>
+        <a href="/create-task" class="btn btn-primary btn-lg btn-block mb-3">创建任务</a>
+        <a href="/task-list" class="btn btn-secondary btn-lg btn-block">任务列表</a>
     </div>
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/popper.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
 </body>
 </html>
