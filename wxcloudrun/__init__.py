@@ -22,3 +22,7 @@ from wxcloudrun import views
 
 # 加载配置
 app.config.from_object('config')
+
+# 注册蓝图
+from wxcloudrun.views import bp as main_bp
+app.register_blueprint(main_bp)
