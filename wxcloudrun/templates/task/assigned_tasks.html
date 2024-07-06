@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>所属任务 - YMA 内部OA平台</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/customer_interface.css') }}">
+</head>
+<body>
+    <nav class="navbar navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="btn btn-primary" href="{{return_path}}" style="background-color: transparent; border: none;">
+                <i class="fas fa-chevron-left"></i>
+            </a>
+            <a class="navbar-brand ms-3" href="#">YMA 内部OA平台</a>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="card">
+            <div class="card-header">
+                所属任务
+            </div>
+            <div class="card-body">
+                <ul class="list-group">
+                    <li class="list-group-item">任务1详细信息</li>
+                    <li class="list-group-item">任务2详细信息</li>
+                    <li class="list-group-item">任务3详细信息</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/popper.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+</body>
+</html>

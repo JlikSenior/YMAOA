@@ -5,20 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>YMA 内部OA平台</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/custom.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <nav class="navbar navbar-light bg-light">
         <div class="container-fluid">
-            <button class="btn btn-primary" id="menuButton">
-                <span class="navbar-toggler-icon"></span>
+            <!-- 菜单按钮 -->
+            <button class="btn btn-primary" id="menuButton" style="background-color: transparent; border: none;">
+                <i class="fas fa-bars"></i>
             </button>
             <a class="navbar-brand ms-3" href="#">YMA 内部OA平台</a>
         </div>
     </nav>
 
-    <!-- Sidebar -->
-    <div class="sidebar" id="sidebarMenu" style="text-align: center;">
+    <!-- Sidebar 菜单 -->
+    <div class="sidebar" id="sidebarMenu">
         <div class="offcanvas-header">
             <h5 class="offcanvas-title" id="offcanvasMenuLabel">菜单</h5>
         </div>
@@ -41,7 +43,7 @@
             <hr class="my-4">
             <div class="row">
                 <div class="col-md-6 mb-3">
-                    <a class="btn btn-primary btn-lg btn-block btn-custom btn-primary-custom" href="#" role="button">客服管理</a>
+                    <a class="btn btn-primary btn-lg btn-block btn-custom btn-primary-custom" href="/customer-services" role="button">客服管理</a>
                 </div>
                 <div class="col-md-6 mb-3">
                     <a class="btn btn-secondary btn-lg btn-block btn-custom btn-secondary-custom" href="#" role="button">技术管理</a>
@@ -54,27 +56,23 @@
     <script src="{{ url_for('static', filename='js/popper.min.js') }}"></script>
     <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
     <script>
-        document.getElementById('menuButton').addEventListener('click', function () {
-            document.getElementById('sidebarMenu').classList.toggle('show');
-            document.getElementById('mainContent').classList.toggle('shifted');
-        });
+        document.addEventListener('DOMContentLoaded', function() {
+            var menuButton = document.getElementById('menuButton');
+            var sidebarMenu = document.getElementById('sidebarMenu');
+            var mainContent = document.getElementById('mainContent');
 
-        document.addEventListener('click', function (event) {
-            const sidebarMenu = document.getElementById('sidebarMenu');
-            const mainContent = document.getElementById('mainContent');
-            if (!sidebarMenu.contains(event.target) && !event.target.closest('#menuButton')) {
-                sidebarMenu.classList.remove('show');
-                mainContent.classList.remove('shifted');
-            }
-        });
+            menuButton.addEventListener('click', function() {
+                sidebarMenu.classList.toggle('show');
+                mainContent.classList.toggle('shifted');
+            });
 
-        document.addEventListener('touchstart', function (event) {
-            const sidebarMenu = document.getElementById('sidebarMenu');
-            const mainContent = document.getElementById('mainContent');
-            if (!sidebarMenu.contains(event.target) && !event.target.closest('#menuButton')) {
-                sidebarMenu.classList.remove('show');
-                mainContent.classList.remove('shifted');
-            }
+            // 点击非菜单区域关闭菜单
+            document.addEventListener('click', function(event) {
+                if (!sidebarMenu.contains(event.target) && !menuButton.contains(event.target)) {
+                    sidebarMenu.classList.remove('show');
+                    mainContent.classList.remove('shifted');
+                }
+            });
         });
     </script>
 </body>

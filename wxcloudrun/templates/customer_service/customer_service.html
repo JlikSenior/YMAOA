@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>客服管理 - YMA 内部OA平台</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/customer_service.css') }}">
+</head>
+<body>
+    <nav class="navbar navbar-light bg-light">
+        <div class="container-fluid">
+            <!-- 返回图标按钮 -->
+            <a class="btn btn-back" id="backButton" href="#">
+                <i class="fas fa-chevron-left"></i>
+            </a>
+            <a class="navbar-brand ms-3" href="#">YMA 内部OA平台</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="jumbotron">
+            <h1 class="display-6 custom-title">客服管理</h1>
+            <p class="lead custom-subtitle">欢迎来到客服管理页面。在这里，您可以管理客服服务相关的所有内容。</p>
+            <hr class="my-4">
+            <div class="d-grid gap-2">
+                <a class="btn btn-primary-custom btn-custom" href="{{ url_for('main.customer_entry') }}" role="button">客服注册</a>
+                <a class="btn btn-primary-custom btn-custom" href="{{ url_for('main.customer_interface') }}" role="button">客服界面</a>
+                <a class="btn btn-primary-custom btn-custom" href="{{ url_for('main.customer_list') }}" role="button">客服列表</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/popper.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var referrer = document.referrer;
+            var backButton = document.getElementById('backButton');
+
+            // 检查referrer是否来自主页
+            if (referrer.includes('/')) {
+                backButton.href = '/';
+            } else {
+                backButton.href = 'javascript:history.back()';
+            }
+        });
+    </script>
+</body>
+</html>

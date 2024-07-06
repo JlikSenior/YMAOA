@@ -14,5 +14,5 @@ app.config['DEBUG'] = config.DEBUG
 
 app.config.from_object('config')
 
-from wxcloudrun.views import bp as main_bp
-app.register_blueprint(main_bp)
+from wxcloudrun.views import bp as mainbp
+app.register_blueprint(mainbp)

@@ -16,12 +16,14 @@
     border: none;
     outline: none;
     box-shadow: none;
+    color: inherit;
 }
 
 .btn-primary:focus, .btn-primary:hover, .btn-primary:active {
     background-color: transparent; /* 悬停和点击时的背景色 */
     outline: none;
     box-shadow: none;
+    color: inherit;
 }
 
 /* 美化 jumbotron */
@@ -30,6 +32,7 @@
     padding: 2rem;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
 
 /* 标题样式 */
@@ -42,27 +45,24 @@
 .custom-subtitle {
     font-size: 1.25rem;
     color: #6c757d;
+    margin-bottom: 20px;
 }
 
 /* 调整按钮的间距和样式 */
 .btn-custom {
     margin-top: 10px;
-    padding: 15px;
+    padding: 15px 20px;
     font-size: 1.1rem;
     border-radius: 5px;
     outline: none;
     box-shadow: none;
+    display: block;
+    width: 100%;
 }
 
 .btn-primary-custom {
     background-color: #007bff;
     border-color: #007bff;
-    color: white;
-}
-
-.btn-secondary-custom {
-    background-color: #6c757d;
-    border-color: #6c757d;
     color: white;
 }
 
@@ -73,36 +73,17 @@
     outline: none;
 }
 
-.btn-secondary-custom:focus, .btn-secondary-custom:active {
-    background-color: #5a6268;
-    border-color: #545b62;
-    box-shadow: none;
-    outline: none;
+.btn-primary-custom:hover {
+    background-color: #0056b3;
 }
 
-.btn-primary-custom:hover, .btn-secondary-custom:hover {
-    background-color: #e0e0e0;
+/* 调整容器宽度和边距 */
+.container {
+    max-width: 600px;
+    margin-top: 50px;
 }
 
-.sidebar {
-    position: fixed;
-    top: 56;
-    left: -100px;
-    width: 100px;
-    height: 100%;
-    background-color: #f8f9fa;
-    transition: left 0.3s ease;
-    z-index: 1040;
-}
-
-.sidebar.show {
-    left: 0;
-}
-
-.content {
-    transition: margin-left 0.3s ease;
-}
-
-.content.shifted {
-    margin-left: 250px;
+/* 自定义 hr 样式 */
+hr.my-4 {
+    border-color: #007bff;
 }

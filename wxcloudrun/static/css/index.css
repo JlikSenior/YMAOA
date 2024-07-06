@@ -1,0 +1,115 @@
+customer_services
+
+/* 设置按钮的默认背景为透明 */
+.btn-primary {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    color: inherit;
+}
+
+.btn-primary:focus, .btn-primary:hover, .btn-primary:active {
+    background-color: transparent; /* 悬停和点击时的背景色 */
+    outline: none;
+    box-shadow: none;
+    color: inherit;
+}
+
+/* 美化 jumbotron */
+.jumbotron {
+    background-color: #f8f9fa;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* 标题样式 */
+.custom-title {
+    font-weight: bold;
+    color: #007bff;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.custom-subtitle {
+    font-size: 1.25rem;
+    color: #6c757d;
+    margin-bottom: 20px;
+}
+
+/* 调整按钮的间距和样式 */
+.btn-custom {
+    margin-top: 10px;
+    padding: 15px 20px;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    outline: none;
+    box-shadow: none;
+    display: block;
+    width: 100%;
+}
+
+.btn-primary-custom {
+    background-color: #007bff;
+    border-color: #007bff;
+    color: white;
+}
+
+.btn-primary-custom:focus, .btn-primary-custom:active {
+    background-color: #0056b3;
+    border-color: #0056b3;
+    box-shadow: none;
+    outline: none;
+}
+
+.btn-primary-custom:hover {
+    background-color: #0056b3;
+}
+
+/* 调整容器宽度和边距 */
+.container {
+    max-width: 600px;
+    margin-top: 50px;
+}
+
+/* 自定义 hr 样式 */
+hr.my-4 {
+    border-color: #007bff;
+}
+
+/* Sidebar 样式 */
+.sidebar {
+    position: fixed;
+    top: 56px;
+    left: -100px;
+    width: 100px;
+    height: 100%;
+    background-color: #f8f9fa;
+    z-index: 1040;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: left 0.3s ease;
+}
+
+.sidebar.show {
+    left: 0;
+}
+
+/* 菜单标题和菜单项居中 */
+.sidebar .offcanvas-header,
+.sidebar .nav-item {
+    text-align: center;
+}
+
+.sidebar .nav-link {
+    display: inline-block;
+}
+
+/* 主内容样式 */
+.content {
+    transition: margin-left 0.3s ease;
+}
+
+.content.shifted {
+    margin-left: 100px;
+}

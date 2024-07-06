@@ -1,5 +1,6 @@
+
 from flask import Blueprint
 
 bp = Blueprint('main', __name__)
 
-from . import index
+from . import index,customer_service,task
